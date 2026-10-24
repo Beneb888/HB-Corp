@@ -1,1 +1,570 @@
-<html><h1>Hello</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HB-Corp | Power Massage</title>
+    <meta
+      name="description"
+      content="HB-Corp Power Massage offers therapeutic and relaxation massage services designed to restore comfort, improve wellness, and relieve everyday stress."
+    />
+    <style>
+      :root {
+        --bg: #f6f2eb;
+        --panel: #fffdf9;
+        --primary: #8c5e3c;
+        --primary-dark: #5d3925;
+        --accent: #dca66d;
+        --text: #2d241f;
+        --muted: #625857;
+        --line: rgba(92, 65, 49, 0.12);
+        --shadow: 0 20px 45px rgba(93, 57, 37, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        background: rgba(255, 253, 249, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--primary-dark);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        flex-wrap: wrap;
+        color: var(--muted);
+        font-weight: 600;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-dark);
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: #fff;
+        padding: 14px 24px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: 0.25s ease;
+        box-shadow: var(--shadow);
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #f7efe6 0%, #f2e6d9 100%);
+        padding: 80px 0 50px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        background: rgba(140, 94, 60, 0.1);
+        color: var(--primary-dark);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+      }
+
+      .lead {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 580px;
+        margin-bottom: 28px;
+      }
+
+      .cta-row {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+
+      .secondary-btn {
+        display: inline-block;
+        padding: 14px 24px;
+        border: 1px solid rgba(92, 65, 49, 0.15);
+        border-radius: 999px;
+        font-weight: 700;
+        color: var(--primary-dark);
+        background: rgba(255,255,255,0.3);
+      }
+
+      .stats {
+        display: flex;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        min-width: 130px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 1.7rem;
+        color: var(--primary-dark);
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-image {
+        position: relative;
+        min-height: 430px;
+        background: linear-gradient(180deg, rgba(61, 39, 29, 0.1), rgba(61, 39, 29, 0.08)),
+          url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=80') center/cover no-repeat;
+      }
+
+      .badge {
+        position: absolute;
+        right: 24px;
+        bottom: 24px;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(92, 65, 49, 0.08);
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      }
+
+      .badge .rating {
+        font-size: 1.7rem;
+        font-weight: 700;
+        color: var(--primary-dark);
+      }
+
+      .badge small {
+        color: var(--muted);
+      }
+
+      section {
+        padding: 84px 0;
+      }
+
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 20px;
+        margin-bottom: 38px;
+        flex-wrap: wrap;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 3rem);
+        letter-spacing: -0.05em;
+      }
+
+      .section-heading p {
+        margin: 0;
+        color: var(--muted);
+        max-width: 560px;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+      }
+
+      .service-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 28px 24px;
+        box-shadow: 0 12px 24px rgba(54, 37, 27, 0.04);
+      }
+
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        display: grid;
+        place-items: center;
+        background: rgba(220, 166, 109, 0.2);
+        color: var(--primary-dark);
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+      }
+
+      .service-card h3 {
+        margin: 0 0 12px;
+        font-size: 1.3rem;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .benefits {
+        background: #f3e7dc;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .benefit {
+        background: rgba(255,255,255,0.5);
+        border: 1px solid rgba(92, 65, 49, 0.09);
+        border-radius: 20px;
+        padding: 22px 18px;
+      }
+
+      .benefit strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.7rem;
+        color: var(--primary-dark);
+      }
+
+      .benefit span {
+        color: var(--muted);
+      }
+
+      .about-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: center;
+      }
+
+      .about-image {
+        min-height: 420px;
+        border-radius: 28px;
+        background: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+      }
+
+      .about-copy h3 {
+        margin-top: 0;
+        font-size: 2rem;
+        letter-spacing: -0.04em;
+      }
+
+      ul.check-list {
+        list-style: none;
+        padding: 0;
+        margin: 26px 0 0;
+      }
+
+      ul.check-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 0;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      ul.check-list li::before {
+        content: "✓";
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: inline-grid;
+        place-items: center;
+        background: rgba(140, 94, 60, 0.12);
+        color: var(--primary-dark);
+        font-weight: 700;
+      }
+
+      .cta-panel {
+        background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+        color: #fff;
+        border-radius: 28px;
+        padding: 38px 32px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-panel h3 {
+        margin: 0 0 8px;
+        font-size: clamp(1.8rem, 3vw, 2.7rem);
+      }
+
+      .cta-panel p {
+        margin: 0;
+        color: rgba(255,255,255,0.82);
+      }
+
+      footer {
+        padding: 28px 0 52px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .hero-grid,
+        .services-grid,
+        .benefits-grid,
+        .about-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .nav {
+          padding: 16px 0;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .nav-links {
+          gap: 14px;
+        }
+
+        .section-heading {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <a href="#top" class="brand">HB-Corp</a>
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn">Book a Session</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Wellness. Recovery. Relief.</span>
+            <h1>Power your body back to balance.</h1>
+            <p class="lead">
+              Experience therapeutic massage and restorative care designed to ease tension,
+              improve movement, and help you feel re-energized from the very first session.
+            </p>
+            <div class="cta-row">
+              <a href="#contact" class="btn">Schedule Today</a>
+              <a href="#services" class="secondary-btn">Explore Services</a>
+            </div>
+            <div class="stats">
+              <div class="stat">
+                <strong>2k+</strong>
+                <span>Sessions</span>
+              </div>
+              <div class="stat">
+                <strong>4.9/5</strong>
+                <span>Client Rating</span>
+              </div>
+              <div class="stat">
+                <strong>1-on-1</strong>
+                <span>Personal Care</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <div class="hero-image" aria-label="Massage therapy session">
+              <div class="badge">
+                <div class="rating">★★★★★</div>
+                <small>Trusted by local clients</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Massage services built for recovery.</h2>
+            <p>
+              We combine expert bodywork with a calm, healing environment so every treatment
+              supports your goals, whether you need relief, restoration, or relaxation.
+            </p>
+          </div>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-icon">✦</div>
+              <h3>Deep Tissue Therapy</h3>
+              <p>
+                Focuses on chronic tension, muscle stiffness, and soreness to improve comfort and mobility.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">❋</div>
+              <h3>Sports Recovery</h3>
+              <p>
+                Helps athletes and active individuals recover faster, reduce strain, and stay in motion.
+              </p>
+            </article>
+
+            <article class="service-card">
+              <div class="service-icon">☼</div>
+              <h3>Relaxation Massage</h3>
+              <p>
+                A gentle, stress-reducing treatment to support calm, sleep quality, and overall wellness.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Why clients choose HB-Corp.</h2>
+            <p>
+              Every plan is personalized to meet your body, pace, and wellness goals with a supportive treatment approach.
+            </p>
+          </div>
+
+          <div class="benefits-grid">
+            <div class="benefit">
+              <strong>90 min</strong>
+              <span>Extended sessions for deeper recovery.</span>
+            </div>
+            <div class="benefit">
+              <strong>Tailored</strong>
+              <span>Care plans built around your needs.</span>
+            </div>
+            <div class="benefit">
+              <strong>Stress Relief</strong>
+              <span>Lower tension and restore balance.</span>
+            </div>
+            <div class="benefit">
+              <strong>Mobility</strong>
+              <span>Improve movement and comfort daily.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container about-wrap">
+          <div class="about-image" aria-label="Massage treatment room"></div>
+          <div class="about-copy">
+            <span class="eyebrow">About HB-Corp</span>
+            <h3>Feel better in your body, one session at a time.</h3>
+            <p>
+              HB-Corp is dedicated to helping clients move with less pain and more confidence.
+              Whether you are managing stress, recovering from activity, or simply need time to reset,
+              our massage therapies are designed to meet your needs with care and precision.
+            </p>
+            <ul class="check-list">
+              <li>Licensed therapeutic techniques</li>
+              <li>Comfort-first treatment environment</li>
+              <li>Supportive, personalized care plans</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="cta-panel">
+            <div>
+              <h3>Ready to feel your best?</h3>
+              <p>Book your appointment and experience targeted care for stress relief and recovery.</p>
+            </div>
+            <a href="mailto:hello@hbcorp.com" class="secondary-btn" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.2);">hello@hbcorp.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 HB-Corp | Power Massage</div>
+    </footer>
+  </body>
+</html>
