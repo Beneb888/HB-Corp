@@ -23,7 +23,7 @@ img {
   border-color: #111111;
   border-width: 10px;
 }
-.photo-pair {
+.photo-par {
   display: flex;
   align-items: center;
   gap: 24px;
