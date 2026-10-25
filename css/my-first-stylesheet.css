@@ -23,6 +23,11 @@ img {
   border-color: #111111;
   border-width: 10px;
 }
+.photo-pair {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 nav ul {
   list-style-type: none;
   background-color:#B577B5;
